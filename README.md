@@ -25,6 +25,40 @@ Install the dependencies
 npm install
 ```
 
+.env file
+
+Rename env-example to .env and add your subnet private keys
+
+Deploy on subnet the contracts
+
+```zsh
+cd contracts
+# deploy the NFT collection
+npx hardhat run scripts/deployNFTCollection.js --network network_name
+NFT Collection deployed to:0x.....
+
+# deploy the $RUN token
+npx hardhat run scripts/deployRunToken.js --network network_name
+$RUN token deployed to:0x... 
+``` 
+
+Paste the NFT Collection contract address to the claimNft function in blockchain.js
+
+```zsh
+const nftContractAddress = "0x...";
+```
+
+Paste the $RUN token contract address to the claimTokens function in blockchain.js
+```zsh
+const runTokenContractAddress = "0x...";
+```
+
+Start the server 
+
+```zsh
+yarn run start
+```
+
 ## Credit
 
 Credit to [Dapp University](https://www.youtube.com/watch?v=ZjQzxXhebVc) for the original Web3 game workshop.
