@@ -65,7 +65,7 @@ function checkIfWeGotNFT() {
     const nftToRemove = document.querySelectorAll("[data-nft]")[0]
     nftToRemove.remove()
     nftScore += 1
-    nftScoreElem.textContent = `nft score: ${nftScore}`
+    nftScoreElem.textContent = `NFT score: ${nftScore}`
   }
   return getNFTRects().some(rect => isCollision(rect, playerRect))
 }
